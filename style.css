@@ -20,11 +20,22 @@ html {
     scroll-behavior: smooth;
 }
 
+/* style.css */
+
 body {
     font-family: var(--font-family);
     line-height: 1.7;
     color: var(--text-color);
     background-color: var(--white-color);
+    overflow-x: hidden; /* 新增：全局防止水平滾動條出現 */
+}
+
+/* --- 新增這段全局圖片設定 --- */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* 移除圖片下方的微小空隙 */
+    border-radius: 10px;
 }
 
 .container {
@@ -47,10 +58,6 @@ a { text-decoration: none; color: var(--primary-color); }
 
 section {
     padding: 5rem 0;
-}
-
-img {
-    border-radius: 10px;
 }
 
 .section-title {
@@ -299,9 +306,15 @@ footer {
     h1 { font-size: 2.8rem; }
     h2 { font-size: 2rem; }
 
+    /* --- 關鍵修改：縮小容器在手機上的左右邊距 --- */
+    .container {
+        padding: 0 1rem; /* 從 2rem 減為 1rem */
+    }
+
     .navbar .container {
         flex-direction: column;
         align-items: center;
+        padding: 0 1rem; /* 導覽列的容器也要調整 */
     }
     
     .navbar nav ul {
@@ -314,7 +327,7 @@ footer {
         margin: 0.2rem 0.5rem;
     }
 
-    .two-columns, .two-columns-reversed, .portfolio-grid {
+    .two-columns, .two-columns-reversed {
         grid-template-columns: 1fr; /* 所有多欄佈局在手機上變為單欄 */
         text-align: center;
     }
@@ -323,16 +336,24 @@ footer {
         order: 0; /* 在手機上恢復預設順序 */
     }
 
+    #hero {
+        padding: 4rem 0;
+    }
+
+    /* --- 修正作品集區塊在手機上的樣式 --- */
     .portfolio-item {
-        grid-template-columns: 1fr; /* 在手機上變為單欄，圖片在上，文字在下 */
+        grid-template-columns: 1fr; /* 圖片在上，文字在下 */
         gap: 0;
     }
 
-    .portfolio-details {
-        padding: 2rem 1.5rem; /* 調整手機上的內距 */
+    /* 確保圖片容器不會有不必要的圓角或樣式問題 */
+    .portfolio-image .image-placeholder {
+        border-radius: 8px 8px 0 0; /* 只保留上方左右圓角 */
     }
 
-    #hero {
-        padding: 4rem 0;
+    /* 調整文字區塊的內距，使其更適合手機螢幕 */
+    .portfolio-details {
+        padding: 1.5rem;
+        text-align: left; /* 文字內容建議靠左對齊，更易閱讀 */
     }
 }
