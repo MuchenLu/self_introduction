@@ -1,0 +1,338 @@
+/* ===== 全域設定與 CSS 變數 ===== */
+:root {
+    --primary-color: #3498db; /* 主要強調色 (可替換) */
+    --dark-color: #2c3e50;    /* 深色 (用於標題) */
+    --text-color: #555;       /* 主要文字顏色 */
+    --light-gray-bg: #f8f9fa; /* 淺灰色背景 */
+    --white-color: #ffffff;
+    --container-width: 1100px;
+    --font-family: 'Helvetica Neue', Arial, 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+}
+
+/* ===== 基本重設與樣式 ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--white-color);
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+h1, h2, h3 {
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.5rem; }
+p { margin-bottom: 1rem; }
+a { text-decoration: none; color: var(--primary-color); }
+
+section {
+    padding: 5rem 0;
+}
+
+img {
+    border-radius: 10px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* ===== 導覽列 (Navbar) ===== */
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    padding: 1rem 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--dark-color);
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.navbar nav ul li a {
+    color: var(--text-color);
+    font-weight: 500;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.navbar .cta-button {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .cta-button:hover {
+    background-color: #2980b9; /* 加深的主要顏色 */
+    color: var(--white-color);
+}
+
+/* ===== 主視覺區 (Hero) ===== */
+#hero {
+    padding: 6rem 0;
+    background-color: var(--white-color);
+}
+
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3rem;
+}
+
+h1 {
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 0.8rem 2.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+}
+
+/* ===== 關於我 (About) ===== */
+#about {
+    background-color: var(--light-gray-bg);
+}
+
+.two-columns-reversed {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3rem;
+}
+
+.two-columns-reversed .about-image {
+    order: -1; /* 將圖片順序提前到左邊 */
+}
+
+
+/* ===== 技能 (Skills) ===== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-card {
+    background-color: var(--white-color);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+/* ===== 作品集 (Portfolio) ===== */
+#portfolio {
+    background-color: var(--light-gray-bg);
+}
+
+.portfolio-list {
+    display: grid;
+    gap: 3rem; /* 每個作品卡片之間的間距 */
+}
+
+.portfolio-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 圖片和文字各佔 50% 寬度 */
+    align-items: center;
+    gap: 2.5rem; /* 圖片和文字之間的間距 */
+    background-color: var(--white-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    overflow: hidden; /* 確保圖片圓角能正常顯示 */
+    transition: box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* 為了讓圖片區域能正確顯示，我們需要讓 image-placeholder 填滿它 */
+.portfolio-image .image-placeholder {
+    height: 100%;
+    min-height: 300px; /* 設定一個最小高度 */
+    border-radius: 0; /* 圖片在卡片左側，不需要圓角 */
+}
+
+/* 當您換成真實圖片時，確保它能填滿容器 */
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 0;
+}
+
+.portfolio-details {
+    padding: 2rem 1.5rem; /* 調整手機上的內距 */
+}
+
+.portfolio-details h3 {
+    margin-top: 0; /* 移除原本的上邊距 */
+}
+
+/* 新增一個外框按鈕的樣式 */
+.btn-outline {
+    display: inline-block;
+    padding: 0.6rem 1.8rem;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    background-color: transparent;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+/* ===== 聯絡 (Contact) ===== */
+#contact {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    text-align: center;
+}
+
+#contact h2, #contact p {
+    color: var(--white-color);
+}
+
+/* ===== 頁尾 (Footer) ===== */
+footer {
+    padding: 2rem 0;
+    text-align: center;
+    background-color: var(--white-color);
+    border-top: 1px solid #e9ecef;
+}
+
+/* ===== 圖片佔位符 (可替換為 <img>) ===== */
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    background-color: #e9ecef;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #adb5bd;
+}
+
+.hero-image .image-placeholder {
+    min-height: 450px;
+}
+
+/* ===== 響應式設計 (RWD for Mobile) ===== */
+@media (max-width: 768px) {
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2rem; }
+
+    .navbar .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .navbar nav ul {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .navbar nav ul li a {
+        margin: 0.2rem 0.5rem;
+    }
+
+    .two-columns, .two-columns-reversed, .portfolio-grid {
+        grid-template-columns: 1fr; /* 所有多欄佈局在手機上變為單欄 */
+        text-align: center;
+    }
+
+    .two-columns-reversed .about-image {
+        order: 0; /* 在手機上恢復預設順序 */
+    }
+
+    .portfolio-item {
+        grid-template-columns: 1fr; /* 在手機上變為單欄，圖片在上，文字在下 */
+        gap: 0;
+    }
+
+    .portfolio-details {
+        padding: 2rem 1.5rem; /* 調整手機上的內距 */
+    }
+
+    #hero {
+        padding: 4rem 0;
+    }
+}

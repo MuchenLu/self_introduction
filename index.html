@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>賴永來自介</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===== 上方資訊欄 ===== -->
+    <header class="navbar">
+        <div class="container">
+            <a href="#hero" class="logo">賴永來 Ryan Lai</a>
+            <nav>
+                <ul>
+                    <li><a href="#about">關於我</a></li>
+                    <li><a href="#skills">專業技能</a></li>
+                    <li><a href="#portfolio">作品集</a></li>
+                    <li><a href="#contact" class="cta-button">聯絡我</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== 主視覺區 (Hero Section) ===== -->
+        <section id="hero">
+            <div class="container two-columns">
+                <div class="hero-text">
+                    <h1>賴永來<br>Ryan Lai</h1>
+                    <p class="subtitle">一名高中生，專門開發 Python 程式</p>
+                    <p>我是一名邏輯思考清晰的學生，擁有專業的 Python 技能，常常會在生活中發現問題，並嘗試使用 Python 來解決，除此之外，我也善於分享，常常在學校中參與各種短講或分享活動。</p>
+                    <a href="#portfolio" class="btn">查看我的作品</a>
+                </div>
+                <div class="hero-image">
+                    <div class="image-placeholder">
+                        <img src="./my_photo.jpg" alt="個人照片" width = "600" height = "600">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 關於我 (About Me) ===== -->
+        <section id="about">
+            <div class="container two-columns-reversed">
+                <div class="about-text">
+                    <h2>關於我</h2>
+                    <p>小的時候，媽媽帶我從code.org開始接觸程式這個領域，而周遭的遊戲、軟體都是由一行一行的文字程式開發而成，因此我便被其深深吸引，開始從最簡單的 Python 入手，並進一步學習 UI 介面開發、API串接等技術。</p>
+                    <p>在團隊合作的過程中我通常擔任領導者的角色，在不損害彼此利益的前提之下，帶領團隊成員一同開發專案並產出與眾不同的成果。</p>
+                </div>
+                <div class="about-image">
+                     <div class="image-placeholder">
+                        <img src="./work_photo.jpg" alt="演講照" width = "600" height = "400">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 專業技能 (Skills) ===== -->
+        <section id="skills">
+            <div class="container">
+                <h2 class="section-title">專業技能</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>前端開發</h3>
+                        <p>html, CSS, PyQt6</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>後端開發</h3>
+                        <p>Python</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>邏輯思考</h3>
+                        <p>問題分析, 系統化思考</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== 作品集 (Portfolio) ===== -->
+        <section id="portfolio">
+            <div class="container">
+                <h2 class="section-title">精選作品</h2>
+                
+                <!-- 這部分是主要修改區域 -->
+                <div class="portfolio-list">
+
+                    <!-- 作品一 -->
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <div class="image-placeholder">
+                                <img src="./outcomes.png" alt="任務管理系統" width = "800" height = "600">
+                            </div>
+                        </div>
+                        <div class="portfolio-details">
+                            <h3>任務管理系統</h3>
+                            <p>使用 Python 搭配 PyQt6 所開發而成的一套系統，具有基本功能及 Google Calendar 同步等功能</p>
+                            <a href="#" class="btn-outline">查看專案</a>
+                        </div>
+                    </div>
+
+                    <!-- 作品二 -->
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <div class="image-placeholder">
+                                <!-- 建議尺寸：800x600px 或 4:3 比例 -->
+                                <span>敬請期待</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-details">
+                            <h3><!-- 作品 B 標題 --></h3>
+                            <p><!-- 關於作品 B 的簡短描述，可以說明您在此專案中扮演的角色與使用的技術。 --></p>
+                            <a href="#" class="btn-outline">查看專案</a>
+                        </div>
+                    </div>
+
+                    <!-- 如果有更多作品，可以複製上方的 portfolio-item 區塊往下貼 -->
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 聯絡方式 (Contact) ===== -->
+        <section id="contact">
+            <div class="container contact-content">
+                <h2>還有其他問題或想進行交流？</h2>
+                <p>我隨時樂於接受新的挑戰與合作機會。歡迎透過以下方式與我聯繫！</p>
+                <a href="mailto:ryan.yonglai@gmail.com" class="btn">ryan.yonglai@gmail.com</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== 頁尾 ===== -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Ryan Lai. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
